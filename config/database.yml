@@ -77,9 +77,9 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: screen_rotator_production
-  username: screen_rotator
-  password: <%= ENV['screen_rotator_DATABASE_PASSWORD'] %>
+
+#production:
+#  <<: *default
+#  database: screen_rotator_production
+#  username: screen_rotator
+#  password: <%= ENV['screen_rotator_DATABASE_PASSWORD'] %>
