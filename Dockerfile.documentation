@@ -1,0 +1,4 @@
+# container listen to port 80 by default
+FROM registry.kubernetes.ch/silvermind/document_artefacts:master-latest
+
+COPY ./static-html-docs /myapp/public/docs/

@@ -1,0 +1,7 @@
+-#this screen show is in context of a playlist - move to next item in list after interval
+
+-#meta redirect
+- content_for :header_meta do
+  %meta{'http-equiv': "refresh", content: "#{@playlist_screen.interval_sec}; URL=#{playlist_screen_url(@next_playlist_screen.playlist, @next_playlist_screen.screen)}"}
+
+= render '/screens/screen', screen: @playlist_screen.screen

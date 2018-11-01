@@ -1,0 +1,8 @@
+-#= debug(@screen)
+
+.topheader
+  = link_to "Admin", admin_root_path
+  - Screen.all.each do |screen|
+    = link_to screen.id, screen_path(screen)
+
+= render 'screen', screen: @screen
