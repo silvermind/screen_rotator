@@ -195,6 +195,10 @@ deploy_production:
   image: cdrx/rancher-gitlab-deploy
   # VARIABLES defined in CI Secrets:
   # https://git.kubernetes.ch/silvermind/screen-rotator/settings/ci_cd
+  #
+  # RANCHER_URL:
+  # RANCHER_ACCESS_KEY:
+  # RANCHER_SECRET_KEY:
   tags:
     - docker
   script:
