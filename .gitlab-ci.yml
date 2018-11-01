@@ -187,16 +187,21 @@ release-image:
 #  only:
 #    - master
 
-#deploy_production:
-#  stage: deploy
-#  environment:
-#    name: production
-#    url: https://demo.e-request.ch
-#  script:
-#    - cd ctron && ./ctron_exec_prod.sh
-#  only:
-#    - master
-
+deploy_production:
+  stage: deploy
+  environment:
+    name: production
+    url: http://screens.enduser.public-apps.live.kubernetes.ch
+  image: cdrx/rancher-gitlab-deploy
+  # VARIABLES defined in CI Secrets:
+  # https://git.kubernetes.ch/silvermind/screen-rotator/settings/ci_cd
+  tags:
+    - docker
+  script:
+    - upgrade --stack app-screen-rotator --service db-migrations --new-image $CONTAINER_IMAGE_RELEASE_NAME
+    - upgrade --stack app-screen-rotator --service web --new-image $CONTAINER_IMAGE_RELEASE_NAME
+  only:
+    - master
 
 collect-docs:
   <<: *artifacts-always
