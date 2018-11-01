@@ -14,6 +14,10 @@ ActiveAdmin.register Playlist do
     end
     panel "Screens in this Playlist" do
       table_for playlist.playlist_screens do
+        column :edit do |ps|
+          # link_to 'edit', [:edit, :admin, playlist, ps]
+          link_to 'edit', edit_admin_playlist_playlist_screen_path(playlist, ps)
+        end
         column :interval_sec
         column :name do |ps|
           ps.screen.name
