@@ -6,9 +6,11 @@ ActiveAdmin.register Screen do
     # selectable_column
     id_column
     column :name
-    column :link
+    column :link do |i|
+      link_to i.link, [i], target: '_blank'
+    end
     column :preview do |i|
-      link_to 'Screen Page', [i]
+      link_to 'Screen Page', [i], target: '_blank'
     end
     actions
   end
