@@ -16,5 +16,4 @@ Rails.application.routes.draw do
   resources :playlist, only: [] do
     resources :screens, only: [:show], controller: 'playlist_screens'
   end
-
 end

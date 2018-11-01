@@ -1,5 +1,6 @@
-class Playlist < ApplicationRecord
+# frozen_string_literal: true
 
+class Playlist < ApplicationRecord
   validates :name, presence: true
   validates :default_interval_sec, presence: true
 

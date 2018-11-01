@@ -1,5 +1,6 @@
-class ScreensController < ApplicationController
+# frozen_string_literal: true
 
+class ScreensController < ApplicationController
   # Shows a single Screen - no context to a run
   def show
     @screen = Screen.find(params[:id])
